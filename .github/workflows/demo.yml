@@ -6,7 +6,7 @@ jobs:
     steps:
       - name: say hello world
         run: echo "Hello World"
-      - name: node and nmp versions
+      - name: node and npm versions
         run: |
           node -v 
           npm -v
