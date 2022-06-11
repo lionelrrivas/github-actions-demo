@@ -1,0 +1,26 @@
+name: Shell Commands
+on: [push]
+jobs:
+  run-shell-command: 
+    runs-on: ubuntu-latest
+    steps:
+      - name: say hello world
+        run: echo "Hello World"
+      - name: node and npm versions
+        run: |
+          node -v 
+          npm -v
+      - name: print platform processor
+        run: | 
+          import platform
+          print(platform.processor())
+        shell: python
+  run-windows-command:
+    runs-on: windows-latest
+    needs: ['run-shell-command']
+    steps:
+      - name: working directory with power shell
+        run: Get-Location
+      - name: working directory with bash
+        run: pwd
+        shell: bash
