@@ -1,5 +1,10 @@
 name: Actions Workflow
 on: 
+  push:
+    branches:
+      - "main"
+      - 'feature/*'
+      - 'feature/**'
   repository_dispatch:
     types: [build]
   pull_request:
