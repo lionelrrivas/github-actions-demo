@@ -2,6 +2,15 @@ name: Context Demo
 on: push
 
 jobs:
+  functions-demo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Demo functions
+        run: |
+          ehco ${{ contains( 'hello', 'll' ) }}
+          ehco ${{ startsWith( 'hello', 'he' ) }}
+          ehco ${{ endsWith( 'hello', 'lo' ) }}
+          ehco ${{ format( 'hello {0} {1} {2}', 'world', '!', '!' ) }}
   dump_contexts_to_log:
     runs-on: ubuntu-latest
     steps:
