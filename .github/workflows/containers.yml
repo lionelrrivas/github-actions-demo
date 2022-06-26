@@ -1,0 +1,12 @@
+name: Docker Demos
+on: push
+jobs:
+  node-with-docker:
+    runs-on: ubuntu-latest
+    container:
+      image: node:16.15.1-alpine3.16
+    steps:
+      - name: Log Node version
+        run: |
+          node -v
+          cat /etc/os-release
