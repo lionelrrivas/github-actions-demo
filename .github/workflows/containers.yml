@@ -27,7 +27,7 @@ jobs:
       - name: Execute shell script
         uses: docker://node:16.15.1-alpine3.16
         with:
-          entrypoint: hello.sh
+          entrypoint: ./hello.sh
           args: "Lionel"
   node-with-docker:
     runs-on: ubuntu-latest
