@@ -21,11 +21,13 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v3
       - name: Show Repo Files
-        run: ls -al
+        run: |
+          ls -al
+          cat ./hello.sh
       - name: Execute shell script
         uses: docker://node:12.14.1-alpine3.10
         with:
-          entrypoint: ./hello.sh
+          entrypoint: "./hello.sh"
           args: "Lionel"
   node-with-docker:
     runs-on: ubuntu-latest
