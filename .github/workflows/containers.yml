@@ -1,6 +1,23 @@
 name: Docker Demos
 on: push
 jobs:
+  docker-containers-in-steps:
+    runs-on: ubuntu-latest
+    container:
+      image: node:10.18.0-jessie
+    steps:
+      - name: log node version
+        run: node -v
+      - name: Run hello world with docker image
+        uses: docker://node:12.14.1-alpine3.10
+        with:
+          entrypoint: "/bin/echo"
+          args: "Hello World"
+      - name: Log node version
+        uses: docker://node:12.14.1-alpine3.10
+        with:
+          entrypoint: /usr/local/bin/node
+          args: -v
   node-with-docker:
     runs-on: ubuntu-latest
     services:
