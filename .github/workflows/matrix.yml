@@ -13,6 +13,6 @@ jobs:
         run: node -v
       - uses: actions/setup-node@v3.3.0
         with:
-          node-version: ${{ matrix.node_version }}
+          node-version: ${{ matrix.node-version }}
       - name: Log node version after change
         run: node -v
