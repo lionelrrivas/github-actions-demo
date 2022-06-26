@@ -24,7 +24,6 @@ jobs:
         with:
           entrypoint: ./hello.sh
           args: "Lionel"
-        run: ls -al
   node-with-docker:
     runs-on: ubuntu-latest
     services:
