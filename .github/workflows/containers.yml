@@ -20,6 +20,8 @@ jobs:
           args: -v
       - name: Checkout Repo
         uses: actions/checkout@v3
+      - name: Show Repo Files
+        run: ls -al
       - name: Execute shell script
         uses: docker://node:12.14.1-alpine3.10
         with:
