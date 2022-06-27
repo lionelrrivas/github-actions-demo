@@ -4,7 +4,7 @@ jobs:
   docker-containers-in-steps:
     runs-on: ubuntu-latest
     container:
-      image: node:10.18.0-jessie
+      image: node:16.15.1-alpine3.16
     steps:
       - name: Log node with Jessie
         run: node -v
