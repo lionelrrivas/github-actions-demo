@@ -29,6 +29,11 @@ jobs:
         with:
           entrypoint: ./hello.sh
           args: "Lionel"
+      - name: Send Slack Message
+        uses: docker://technosophos/slack-notify
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          SLACK_MESSAGE: "This is a slack message from a GitHub action"
   node-with-docker:
     runs-on: ubuntu-latest
     services:
